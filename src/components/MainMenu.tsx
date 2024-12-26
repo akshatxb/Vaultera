@@ -3,6 +3,11 @@ import MetaLogo from '../assets/media/meta-logo.svg'
 import Button from "./Button";
 import { Link, useLocation } from "react-router-dom";
 import { MenuLayout } from "../types/Layout.types";
+import LayoutIcon from '../assets/media/icons/Layout.svg'
+import KeyIcon from '../assets/media/icons/Key.svg'
+import BoltIcon from '../assets/media/icons/Lightning-alt.svg'
+import ShareIcon from '../assets/media/icons/Share.svg'
+import HistoryIcon from '../assets/media/icons/History.svg'
 
 const MainMenu = ({ isCollapsed, ToggleCollapse }: MenuLayout) => {
 
@@ -12,7 +17,7 @@ const MainMenu = ({ isCollapsed, ToggleCollapse }: MenuLayout) => {
     const root = '/dashboard'
     const NavTitles = ['Dashboard', 'Passwords', 'Generator', 'Sharing', 'History'];
     const NavLinks = ['/', '/passwords', '/generator', '/sharing', '/history']
-    const NavIcons = ['Layout', 'Key', 'Lightning-alt', 'Share', 'History'];
+    const NavIcons = [LayoutIcon, KeyIcon, BoltIcon, ShareIcon, HistoryIcon];
 
     useEffect(() => {
         switch (pathname) {
@@ -49,7 +54,7 @@ const MainMenu = ({ isCollapsed, ToggleCollapse }: MenuLayout) => {
                             <Link to={root + NavLinks[index]} className="flex justify-start items-center py-2 rounded-xl my-1">
                                 {NavIcons[index] && (
                                     <div className={`${(ActiveLink === index) ? 'bg-primary' : ''} w-9 h-9 flex justify-center items-center rounded-xl border border-primary`}>
-                                        <img className="h-4 mix-blend-difference" src={`../src/assets/media/icons/${NavIcons[index]}.svg`} />
+                                        <img className="h-4 mix-blend-difference" src={NavIcons[index]} />
                                     </div>
                                 )}
                                 {NavTitles[index] && (
