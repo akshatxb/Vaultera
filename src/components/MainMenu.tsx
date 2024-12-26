@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import MetaLogo from '../assets/media/meta-logo.svg'
 import Button from "./Button";
 import { Link, useLocation } from "react-router-dom";
-import { DashLayout } from "../types/Layout.types";
+import { MenuLayout } from "../types/Layout.types";
 
-const MainMenu = ({ isCollapsed, ToggleCollapse }: DashLayout) => {
+const MainMenu = ({ isCollapsed, ToggleCollapse }: MenuLayout) => {
 
     const { pathname } = useLocation();
     const [ActiveLink, SetActive] = useState(0);

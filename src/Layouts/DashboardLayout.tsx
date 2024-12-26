@@ -7,7 +7,7 @@ const DashboardLayout = ({ isCollapsed, ToggleCollapse, children }: DashLayout) 
         <div className='flex h-dvh'>
             <MainMenu isCollapsed={isCollapsed} ToggleCollapse={ToggleCollapse} />
             <div className='flex flex-auto flex-col'>
-                <NavMenu Title='' />
+                <NavMenu />
                 {children}
             </div>
         </div>

@@ -1,10 +1,8 @@
-import useAuth from "../../hooks/useAuth"
 import ProfilePhoto from '../../assets/media/profile.png'
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-const NavMenu = (Props) => {
+const NavMenu = () => {
 
-    const UserData = useAuth();
     const root = '/dashboard';
     const { pathname } = useLocation();
     const [Page, SetPage] = useState('Welcome!')

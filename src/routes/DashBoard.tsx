@@ -1,9 +1,7 @@
 import Protected from '../components/Protected'
-import MainMenu from '../components/MainMenu';
 import { Route, Routes } from 'react-router-dom';
 import Settings from './DashBoard/Settings';
 import Home from './DashBoard/Home';
-import NavMenu from './DashBoard/NavMenu';
 import Passwords from './DashBoard/Passwords';
 import Generator from './DashBoard/Generator';
 import Sharing from './DashBoard/Sharing';
