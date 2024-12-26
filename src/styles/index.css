@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Neue-Regular';
+  src: url('../assets/fonts/Catamaran.ttf');
+  font-weight: 400;
+  /* Adjust weight accordingly */
+  font-style: normal;
+  /* Adjust style accordingly */
+}
+
+
+@font-face {
+  font-family: "Jost";
+  src: url("../assets/fonts/Jost.ttf");
+}
