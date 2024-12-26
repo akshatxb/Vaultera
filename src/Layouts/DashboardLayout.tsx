@@ -1,5 +1,5 @@
 import MainMenu from '../components/MainMenu'
-import NavMenu from '../routes/DashBoard/NavMenu'
+import NavMenu from '../components/NavMenu'
 import { DashLayout } from '../types/Layout.types'
 
 const DashboardLayout = ({ isCollapsed, ToggleCollapse, children }: DashLayout) => {
