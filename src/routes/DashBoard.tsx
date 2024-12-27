@@ -1,6 +1,6 @@
 import Protected from '../components/Protected'
 import { Route, Routes } from 'react-router-dom';
-import Settings from './DashBoard/Settings';
+import Settings from './DashBoard/History';
 import Home from './DashBoard/Home';
 import Passwords from './DashBoard/Passwords';
 import Generator from './DashBoard/Generator';

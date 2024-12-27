@@ -7,13 +7,17 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'Neue': ['Neue-Regular', 'Sans-Serif'],
         'Jost': ['Jost', 'sans-serif']
       },
       colors: {
         primary: '#ffffff',
         secondary: '#232429',
         tertiary: '#434346',
+        accentColor: {
+          primary: '#ED5C64',
+          secondary: '#018D85',
+          tertiary: '#CBBE02',
+        }
       },
     },
   },

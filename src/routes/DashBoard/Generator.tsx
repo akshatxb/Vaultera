@@ -1,8 +1,9 @@
+import WorkInProgress from "../../components/WorkInProgress"
 
 const Generator = () => {
   return (
-    <div>
-      This is generator
+    <div className="p-2 flex justify-center items-center flex-grow">
+      <WorkInProgress />
     </div>
   )
 }

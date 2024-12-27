@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MetaLogo from '../assets/media/meta-logo.svg'
-import MetaLogoalt from '../assets/media/MetaLogo.svg'
+// import MetaLogoalt from '../assets/media/MetaLogo.svg'
 import Button from "./Button";
 import { Link, useLocation } from "react-router-dom";
 import { MenuLayout } from "../types/Layout.types";
@@ -20,6 +20,10 @@ const MainMenu = ({ isCollapsed, ToggleCollapse }: MenuLayout) => {
     const NavTitles = ['Dashboard', 'Passwords', 'Generator', 'Sharing', 'History'];
     const NavLinks = ['/', '/passwords', '/generator', '/sharing', '/history']
     const NavIcons = [LayoutIcon, KeyIcon, BoltIcon, ShareIcon, HistoryIcon];
+
+    const HandleCollapseClick = () => {
+        ToggleCollapse()
+    }
 
     useEffect(() => {
         switch (pathname) {
@@ -47,7 +51,8 @@ const MainMenu = ({ isCollapsed, ToggleCollapse }: MenuLayout) => {
     return (
         <div className={`${isCollapsed ? 'w-20' : 'w-64'} bg-secondary h-full text-primary flex flex-col justify-between items-start`} >
             <div className="py-8 px-7">
-                {isCollapsed ? <LogoSection src={MetaLogoalt} Width="20" Height="" /> : <LogoSection src={MetaLogo} Width='24' Height="6" />}
+                <LogoSection src={MetaLogo} />
+                <button onClick={HandleCollapseClick}>CO</button>
             </div>
             <div className="flex flex-col justify-center mt-4 px-7 py-8 font-Jost font-light">
                 {Array.from({ length: Math.max(NavIcons.length, NavTitles.length) }).map((_, index) => (
@@ -71,7 +76,6 @@ const MainMenu = ({ isCollapsed, ToggleCollapse }: MenuLayout) => {
                 <span className="text-sm pb-9">Your trial plan ends in 12 days. Upgrade your plan to unlock more features.</span>
                 <Button content='Upgrade to Pro' color='bg-primary' textColor='text-secondary' />
             </div>
-            <button className="bg-red-500" onClick={ToggleCollapse}>LOGOUT</button>
         </div >
     )
 }

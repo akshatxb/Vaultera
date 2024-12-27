@@ -1,14 +1,12 @@
 type LogoSectionProps = {
     [key: string]: any,
-    Width: string,
-    Height: string
 }
 
-const LogoSection = ({ Width, Height, ...Props }: LogoSectionProps) => {
+const LogoSection = ({ ...Props }: LogoSectionProps) => {
 
 
     return (
-        <img {...Props} className={`w-${Width} h-${Height}`} />
+        <img {...Props} className='w-20' />
     )
 }
 

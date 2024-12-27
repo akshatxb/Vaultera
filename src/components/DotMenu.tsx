@@ -3,21 +3,44 @@ import SupportIcon from '../assets/media/icons/Chat.svg'
 import LogoutIcon from '../assets/media/icons/Logout.svg'
 import ProfileIcon from '../assets/media/icons/User.svg'
 import useAuth from '../hooks/useAuth'
+import { useEffect, useRef } from 'react'
 
 type DotMenuState = {
-    isOpen: boolean
+    isMenuOpen: boolean,
+    ToggleMenu: (isMenuOpen: boolean) => void;
 }
 
-const DotMenu = ({ isOpen }: DotMenuState) => {
+const DotMenu = ({ isMenuOpen, ToggleMenu }: DotMenuState) => {
 
     const UserControls = useAuth();
+    const MenuRef = useRef<HTMLDivElement | null>(null);
 
     const HandleLogoutClick = () => {
         UserControls?.HandleLogout()
     }
 
+    const HandleOutsideClick = (event: MouseEvent) => {
+        if (!MenuRef.current?.contains(event.target as Node)) {
+            ToggleMenu(false);
+        }
+
+    };
+
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.addEventListener('mousedown', HandleOutsideClick);
+        } else {
+            document.removeEventListener('mousedown', HandleOutsideClick);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', HandleOutsideClick);
+        };
+    }, [isMenuOpen]);
+
+
     return (
-        <div className={`${isOpen ? '' : 'hidden'} flex flex-col justify-between px-7 py-7 absolute h-64 w-56 bg-secondary right-10 top-12 rounded-2xl font-Jost text-primary font-light`}>
+        <div ref={MenuRef} className={`${isMenuOpen ? '' : 'hidden'} flex flex-col justify-between px-7 py-7 absolute h-64 w-56 bg-secondary right-10 top-12 rounded-2xl font-Jost text-primary font-light`}>
             <div className='flex items-center gap-4'>
                 <div className="flex justify-center items-center border border-primary h-10 w-10 rounded-xl">
                     <img className="h-5 mix-blend-difference" src={ProfileIcon} alt="" />

@@ -12,10 +12,10 @@ const NavMenu = () => {
     const root = '/dashboard';
     const { pathname } = useLocation();
     const [Page, SetPage] = useState('Welcome!')
-    const [isOpen, SetOpen] = useState(false);
+    const [isMenuOpen, SetMenu] = useState(false);
 
     const HandleDotMenu = () => {
-        SetOpen(!isOpen)
+        SetMenu(!isMenuOpen)
     }
 
     const UserId = 'Antony Nicole'
@@ -60,7 +60,7 @@ const NavMenu = () => {
                     <img className='cursor-pointer' onClick={HandleDotMenu} src={DotsIcon} alt="More" />
                 </div>
             </div>
-            <DotMenu isOpen={isOpen} />
+            <DotMenu isMenuOpen={isMenuOpen} ToggleMenu={SetMenu} />
         </div>
     )
 }
