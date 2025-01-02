@@ -1,8 +1,9 @@
+import PasswordsListCard from "../../components/PasswordsListCard"
 
 const Passwords = () => {
   return (
-    <div>
-      Passwords
+    <div className="bg-green-600 flex justify-center items-center h-full">
+      <PasswordsListCard />
     </div>
   )
 }

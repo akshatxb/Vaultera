@@ -14,9 +14,14 @@ export default {
         secondary: '#232429',
         tertiary: '#434346',
         accentColor: {
-          primary: '#ED5C64',
+          primary: '#E75E66',
           secondary: '#018D85',
           tertiary: '#CBBE02',
+        },
+        ctaColor: {
+          secondary: '#ACF1FF',
+          tertiary: '#F0FF92',
+          primary: '#5DC19D',
         }
       },
     },
